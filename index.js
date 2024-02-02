@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors");
+const cors = require("cors"); 
+const userRoute = require('./routes/user.routes');
+
 // require('dotenv').config();
 
 
@@ -17,7 +19,7 @@ app.get("/", (req, res) => {
 
 //route
 // app.use('/product', productRoute)
-// app.use('/user', userRoute)
+app.use('/user', userRoute)
 
 // connect to MongoDB database
 mongoose.connect('mongodb+srv://tiendatyenbai2001:123456abc@cluster0.effb6vr.mongodb.net/dsuit')
